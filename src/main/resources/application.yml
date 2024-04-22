@@ -1,0 +1,12 @@
+server:
+  port: 8080
+spring:
+  # 配置数据源信息
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.189.133:3306/test?serverTimezone=Asia/Shanghai&characterEncoding=utf-8
+    username: root
+    password: 123456
+  jpa:
+    show-sql: true # 默认false，在日志里显示执行的sql语句
+    database: mysql
