@@ -1,13 +1,11 @@
 package com.example.jpatest.student.application.service;
 
 
-import com.example.jpatest.student.domain.model.SsDto;
-import com.example.jpatest.student.domain.model.SsDto2;
-import com.example.jpatest.student.domain.model.SsDto3;
-import com.example.jpatest.student.domain.model.Student;
+import com.example.jpatest.student.domain.model.*;
 import com.example.jpatest.student.domain.service.StudentDomainService;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -39,5 +37,9 @@ public class StudentAppService {
 
     public List<SsDto3> listStudentAndSchool3() {
         return studentDomainService.listStudentAndSchool3().stream().map(SsDto3::new).collect(Collectors.toList());
+    }
+
+    public Page<StudentAndSchoolInfo> listStudentAndSchool4(List<Integer> ids, String name) {
+        return studentDomainService.listStudentAndSchool4(ids,name);
     }
 }
